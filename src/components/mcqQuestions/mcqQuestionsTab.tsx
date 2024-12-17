@@ -1,5 +1,5 @@
 import React from "react";
-import McqQuestionsToolbar from "./mcqQuestionsToolbar";
+import McqToolbar from "./mcqToolbar";
 import McqBody from "./mcqBody";
 
 interface McqQuestionsTabProps {
@@ -15,7 +15,7 @@ class McqQuestionsTab extends React.Component<
   state = { messages: null };
   render() {
     return <div className="invoices-due-container">
-    <McqQuestionsToolbar />
+    <McqToolbar />
     <div
       className="app-contentarea"
       style={{ width: "auto" }}
