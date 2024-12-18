@@ -2,15 +2,15 @@ import React from "react";
 import McqToolbar from "./mcqToolbar";
 import McqBody from "./mcqBody";
 
-interface McqQuestionsTabProps {
+interface McqTabProps {
   handleNavigationChange: (navTarget: string, routeParams?: {}) => void;
 }
 
-interface McqQuestionsTabState {}
+interface McqTabState {}
 
-class McqQuestionsTab extends React.Component<
-  McqQuestionsTabProps,
-  McqQuestionsTabState
+class McqTab extends React.Component<
+  McqTabProps,
+  McqTabState
 > {
   state = { messages: null };
   render() {
@@ -31,4 +31,4 @@ class McqQuestionsTab extends React.Component<
   }
 }
 
-export default McqQuestionsTab;
+export default McqTab;

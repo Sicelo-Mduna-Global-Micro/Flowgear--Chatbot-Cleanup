@@ -2,15 +2,15 @@ import React from "react";
 import McqToolbar from "./mcqToolbar";
 import McqBody from "./mcqBody";
 
-interface mcqParentComponentProps {
+interface mcqParentClassComponentProps {
   handleNavigationChange: (navTarget: string, routeParams?: {}) => void;
 }
 
-interface mcqParentComponentState {}
+interface mcqParentClassComponentState {}
 
-class mcqParentComponent extends React.Component<
-  mcqParentComponentProps,
-  mcqParentComponentState
+class mcqParentClassComponent extends React.Component<
+  mcqParentClassComponentProps,
+  mcqParentClassComponentState
 > {
   state = { messages: null };
   render() {
@@ -33,4 +33,4 @@ class mcqParentComponent extends React.Component<
   }
 }
 
-export default mcqParentComponent;
+export default mcqParentClassComponent;
