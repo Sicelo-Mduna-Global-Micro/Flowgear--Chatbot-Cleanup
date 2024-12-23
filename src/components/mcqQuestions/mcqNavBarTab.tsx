@@ -46,38 +46,53 @@ const McqNavBarTab: React.FunctionComponent<McqNavBarTabProps> = ({ handleNaviga
     setCurrentQuestionIndex(index);
   };
 
+  const renderQuizBlock = (index: number) => {
     return (
-      <div className="invoices-due-container">
-        <McqToolbar />
-        <div
-          className="app-contentarea"
-          style={{ width: "auto" }}
-          id="content-area"
-        >
+      <McqToolBarQuestionNavigator
+        index={index}
+        currentQuestionIndex={currentQuestionIndex}
+        selectedAnswers={selectedAnswers}
+        setSelectedAnswers={setSelectedAnswers}
+        onClick={handleBlockClick}
+      />
+    );
+  };
+
+    return (
+      
           <div className="container-fluid">
-            <div className="mcq-questions-container">
-              {showScore ? (
-                <McqBodyScoreCalculator
-                  calculateScore={getQuizScore}
-                  isPassed={checkIfPassed}
-                  handleRetake={restartQuiz}
-                />) 
-                : 
-                (
-                <McqBody
-                  questions={questions}
-                  currentQuestionIndex={currentQuestionIndex}
-                  setCurrentQuestionIndex={setCurrentQuestionIndex}
-                  selectedAnswers={selectedAnswers}
-                  setSelectedAnswers={setSelectedAnswers}
-                  onSubmitQuiz={() => setShowScore(true)}
-                />
-                )
-              }
+            <div className="toolbar-container force-dark">
+              <div className="question-blocks-container">
+                <div className="question-row">
+                  {questions
+                    .slice(0, 25)
+                    .map((_, index) => renderQuizBlock(index))}
+                </div>
+                <div className="question-row">
+                  {questions
+                    .slice(25, 50)
+                    .map((_, index) => renderQuizBlock(index + 25))}
+                </div>
+              </div>
             </div>
+            {showScore ? (
+              <McqBodyScoreCalculator
+                calculateScore={getQuizScore}
+                isPassed={checkIfPassed}
+                handleRetake={restartQuiz}
+              />
+            ) : (
+              <McqBody
+                questions={questions}
+                currentQuestionIndex={currentQuestionIndex}
+                setCurrentQuestionIndex={setCurrentQuestionIndex}
+                selectedAnswers={selectedAnswers}
+                setSelectedAnswers={setSelectedAnswers}
+                onSubmitQuiz={() => setShowScore(true)}
+              />
+            )}
           </div>
-        </div>
-      </div>
+      
     );
   }
 

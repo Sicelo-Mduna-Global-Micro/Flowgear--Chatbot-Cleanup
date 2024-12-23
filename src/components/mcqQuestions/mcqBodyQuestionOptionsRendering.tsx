@@ -11,7 +11,7 @@ const McqBodyQuestionOptionsRendering: React.FC<{
   selectedAnswer: number | undefined;
   onOptionChange: (index: number) => void;
 }> = ({ question, selectedAnswer, onOptionChange }) => (
-  <div className="question ml-sm-5 pl-sm-5 pt-2">
+  <div className="question pl-sm-5 pt-2">
     <div className="py-2 h5">
       <button className="btn-modern question-btn">
         <b>{question.question}</b>
