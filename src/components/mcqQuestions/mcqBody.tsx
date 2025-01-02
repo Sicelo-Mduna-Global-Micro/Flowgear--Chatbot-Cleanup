@@ -34,8 +34,8 @@ const McqBody: React.FunctionComponent<McqBodyProps> = ({
   const currentQuestion = questions[currentQuestionIndex];
 
   return (
-    <div className="container-wrapper">
-      <div className="mcq_container mt-sm-5 my-1">
+    <div className="mcqBody_outer_container-wrapper">
+      <div className="mcqBody_inner_container mt-sm-5 my-1">
         <McqBodyQuestionOptionsRendering
           question={currentQuestion}
           selectedAnswer={selectedAnswers[currentQuestionIndex]}
