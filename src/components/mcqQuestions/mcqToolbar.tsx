@@ -3,7 +3,7 @@ import { FunctionComponent } from "react";
 
 interface McqQuestionsToolbarProps {}
 
-const McqQuestionsToolbar: FunctionComponent<McqQuestionsToolbarProps> = () => {
+const McqToolbar: FunctionComponent<McqQuestionsToolbarProps> = () => {
   return (
     <React.Fragment>
       <div className="container-fluid toolbar-container">
@@ -29,4 +29,4 @@ const McqQuestionsToolbar: FunctionComponent<McqQuestionsToolbarProps> = () => {
   );
 };
 
-export default McqQuestionsToolbar;
+export default McqToolbar;
